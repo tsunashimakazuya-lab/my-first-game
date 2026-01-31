@@ -12,8 +12,10 @@
     <p id="message"></p>
 
     <script>
+     let count = 0; // スコアを数える変数
         function changeText() {
-            document.getElementById('message').innerText = 'すごい！プログラムが動きましたね！';
+            count = count + 1; // 1ずつ増やす
+            document.getElementById('message').innerText = '今のスコア：' + count + '点！';
         }
     </script>
 </body>
