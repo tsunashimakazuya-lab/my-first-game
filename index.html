@@ -16,6 +16,11 @@
         function changeText() {
             count = count + 1; // 1ずつ増やす
             document.getElementById('message').innerText = '今のスコア：' + count + '点！';
+            if(count === 10){
+                alert('おめでとう！10点に到達しました！');
+                cout=0; // スコアをリセット
+                document.getElementById('message').innerText = '次のゲームを開始します';
+            }
         }
     </script>
 </body>
