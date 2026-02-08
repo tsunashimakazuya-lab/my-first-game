@@ -16,10 +16,20 @@
         function changeText() {
             count = count + 1; // 1ずつ増やす
             document.getElementById('message').innerText = '今のスコア：' + count + '点！';
+           //　ボタンの色を変える機能を追加します
+           let buttonElement = document.querySelector('button');
+           if(count % 2 === 0){
+               buttonElement.style.backgroundColor = 'blue';
+               buttonElement.style.color = 'white';
+              } else {
+                buttonElement.style.backgroundColor = 'Red';
+                buttonElement.style.color = 'white';
+                  }
             if(count === 10){
-                alert('おめでとう！10点に到達しました！');
+                alert('おめでとう！10点に到達しました🎉');
                 count= 0; // スコアをリセット
                 document.getElementById('message').innerText = '次のゲームを開始します';
+                buttonElement.style.backgroundColor = '';
             }
         }
     </script>
