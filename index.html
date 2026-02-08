@@ -42,20 +42,20 @@
             document.getElementById('gameButton').innerText = 'スタート！';
             document.getElementById('timer').innerText = '';
         }
+    }
 
-        function changetext() {
-            if(!gameActive)return; // ゲームがアクティブでないなら何もしない
+    function changetext() {
+        if(!gameActive)return; // ゲームがアクティブでないなら何もしない
 
-            count = count + 1; // 1ずつ増やす
-            document.getElementById('message').innerText = '今のスコア：' + count + '点！';
-            let buttonElement = document.querySelector('button');
-            if(count % 2 === 0){
-               buttonElement.style.backgroundColor = 'blue';
-               buttonElement.style.color = 'white';
-            } else {
-                buttonElement.style.backgroundColor = 'Red';
-                buttonElement.style.color = 'white';
-            }
+        count = count + 1; // 1ずつ増やす
+        document.getElementById('message').innerText = '今のスコア：' + count + '点！';
+        let buttonElement = document.querySelector('button');
+        if(count % 2 === 0){
+            buttonElement.style.backgroundColor = 'blue';
+            buttonElement.style.color = 'white';
+        } else {
+            buttonElement.style.backgroundColor = 'Red';
+            buttonElement.style.color = 'white';
         }
     }
     </script>
