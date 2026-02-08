@@ -18,9 +18,14 @@
      let gameActive = false; // ゲームがアクティブかどうかを示すフラグ
     
      function handleButtonClick() {
+        if(!gameActive){startGame(); 
+        } else {
+                changetext(); // ゲーム中なら連打処理
+        }
+    }
+    function startGame() {
         if(gameActive)return; // ゲームが既にアクティブなら何もしない
-
-        //ゲームを初期化
+    
         count = 0;
         timeleft = 5;
         gameActive = true;
