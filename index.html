@@ -8,12 +8,44 @@
     <h1>プログラミングの世界へようこそ！</h1>
     <p>はじめての自作アプリの第一歩です。</p>
     
-    <button onclick="changeText()">ここを押してみて</button>
+    <button id="gameButton"onclick="startGame()">ゲームスタート！</button>
     <p id="message"></p>
-
+    <p id="timer"></p>
     <script>
      let count = 0; // スコアを数える変数
-        function changeText() {
+     let timeleft = 5
+     let timerId; // タイマーIDを保存する変数
+     let gameActive = false; // ゲームがアクティブかどうかを示すフラグ
+    
+     function startGame() {
+        if(gameActive)return; // ゲームが既にアクティブなら何もしない
+
+        //ゲームを初期化
+        count = 0;
+        timeleft = 5;
+        gameActive = true;
+        document.getElementById('message').innerText = '今のスコア：0点！';
+        document.getElementById('timer').innerText = '残り：' + timeleft + '秒';
+        document.getElementById('gameButton').innerText = '連打！';
+
+        // タイマーを開始
+        timerId = setInterval(countDown, 1000);
+    }
+    function countDown() {
+        timeleft--;
+        document.getElementById('timer').innerText = '残り：' + timeleft + '秒';
+
+        if(timeleft <= 0) {
+            clearInterval(timerId); // タイマーを停止
+            gameActive = false; // ゲームを非アクティブにする
+            alert('時間切れ！あなたのスコアは ' + count + ' 点です。');
+            document.getElementById('gameButton').innerText = 'スタート！';
+            document.getElementById('timer').innerText = '';
+        }
+
+        function changetext() {
+            if(!gameActive)return; // ゲームがアクティブでないなら何もしない
+
             count = count + 1; // 1ずつ増やす
             document.getElementById('message').innerText = '今のスコア：' + count + '点！';
            //　ボタンの色を変える機能を追加します
