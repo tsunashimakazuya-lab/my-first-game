@@ -8,7 +8,7 @@
     <h1>プログラミングの世界へようこそ！</h1>
     <p>はじめての自作アプリの第一歩です。</p>
     
-    <button id="gameButton"onclick="startGame()">ゲームスタート！</button>
+    <button id="gameButton"onclick="handleButtonClick()">ゲームスタート！</button>
     <p id="message"></p>
     <p id="timer"></p>
     <script>
@@ -17,7 +17,7 @@
      let timerId; // タイマーIDを保存する変数
      let gameActive = false; // ゲームがアクティブかどうかを示すフラグ
     
-     function startGame() {
+     function handleButtonClick() {
         if(gameActive)return; // ゲームが既にアクティブなら何もしない
 
         //ゲームを初期化
