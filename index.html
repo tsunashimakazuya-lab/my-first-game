@@ -48,17 +48,16 @@
 
             count = count + 1; // 1ずつ増やす
             document.getElementById('message').innerText = '今のスコア：' + count + '点！';
-           //　ボタンの色を変える機能を追加します
-           let buttonElement = document.querySelector('button');
-           if(count % 2 === 0){
+            let buttonElement = document.querySelector('button');
+            if(count % 2 === 0){
                buttonElement.style.backgroundColor = 'blue';
                buttonElement.style.color = 'white';
-              } else {
+            } else {
                 buttonElement.style.backgroundColor = 'Red';
                 buttonElement.style.color = 'white';
-                  }
             }
         }
+    }
     </script>
 </body>
 </html>
